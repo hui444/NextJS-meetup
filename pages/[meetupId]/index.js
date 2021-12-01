@@ -38,7 +38,7 @@ export async function getStaticPaths() {
   return {
     // fallback=false: all paths are found here (generic 404 page will show)
     // fallback=true: next will return a dynamically generated page
-    fallback: false,
+    fallback: "blocking", //user will not see anything until the page is pre generated
     paths: meetups.map((meetup) => ({
       params: {
         meetupId: meetup._id.toString(),
